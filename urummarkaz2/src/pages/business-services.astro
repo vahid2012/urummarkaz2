@@ -1,0 +1,459 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Business Concierge & Protocol Services',
+  name: 'خدمات جامع تشریفات بازرگانی و تجاری در اروم مرکز',
+  description: 'رزرو هتل‌های لوکس، سالن همایش، ون تشریفاتی، رستوران، ترانسفر فرودگاه و مرز، و هماهنگی جلسات B2B با تجار و بازرگانان در ارومیه.',
+  provider: {
+    '@type': 'Organization',
+    name: 'اروم مرکز',
+    telephone: '09143403431',
+    url: 'https://urummarkaz.ir',
+  },
+  areaServed: { '@type': 'City', name: 'ارومیه' },
+  url: 'https://urummarkaz.ir/business-services',
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'خدمات تشریفات بازرگانی اروم مرکز شامل چه مواردی است؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'خدمات شامل رزرو هتل لوکس، سالن همایش، ون VIP، رستوران تشریفاتی، ترانسفر فرودگاه و مرز، و هماهنگی جلسات B2B با تجار است.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'آیا رزرو هتل در ترکیه نیز انجام می‌شود؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'بله، اروم مرکز رزرو هتل در شهرهای استانبول، آنکارا و وان ترکیه را برای هیئت‌های تجاری انجام می‌دهد.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ون VIP با چه امکاناتی ارائه می‌شود؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ون‌های لوکس با راننده دوزبانه، اینترنت رایگان، آب‌میوه و نوشیدنی، و فضای راحت برای ۷ نفر ارائه می‌شوند.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'چگونه می‌توانم جلسه B2B با تجار ارومیه رزرو کنم؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'با تماس به ۰۹۱۴۳۴۰۳۴۳۱ یا واتساپ، اروم مرکز جلسات با تولیدکنندگان و خریداران را هماهنگ می‌کند.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ترانسفر فرودگاه شامل چه خدماتی است؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'پذیرش CIP فرودگاه، ترانسفر با ون لوکس به هتل، و حمل از مرز سرو و تمرچین به ارومیه شامل می‌شود.',
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title="خدمات جامع تشریفات بازرگانی و تجاری در ارومیه | اروم مرکز"
+  description="رزرو هتل لوکس، سالن همایش، ون VIP، رستوران تشریفاتی، ترانسفر فرودگاه و مرز، و جلسات B2B با تجار در ارومیه و ترکیه. خدمات کامل تشریفات بازرگانی."
+  keywords="تشریفات بازرگانی ارومیه, رزرو هتل ارومیه, ون VIP, رزرو سالن همایش, ترانسفر فرودگاه, B2B ارومیه, رستوران تشریفاتی, CIP فرودگاه, اروم مرکز"
+  image="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&h=600&fit=crop"
+  jsonLd={[jsonLd, faqJsonLd]}
+>
+  <!-- Hero -->
+  <section class="relative h-80 md:h-96 flex items-end overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&h=600&fit=crop"
+      alt="خدمات تشریفات بازرگانی و تجاری در ارومیه"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent"></div>
+    <div class="relative max-w-5xl mx-auto px-4 pb-10 w-full">
+      <nav class="text-sm text-slate-400 mb-3">
+        <a href="/" class="hover:text-emerald-400">خانه</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-200">خدمات تشریفات</span>
+      </nav>
+      <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+        خدمات جامع تشریفات بازرگانی و تجاری در اروم مرکز
+      </h1>
+      <p class="text-slate-300 mt-3 text-base md:text-lg max-w-2xl">
+        از پذیرش فرودگاه تا جلسات تخصصی B2B — تمام مراحل پشتیبانی هیئت‌های تجاری بین‌المللی
+        در ارومیه، ترکیه و کشورهای همسایه توسط تیم حرفه‌ای اروم مرکز.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="max-w-4xl mx-auto px-4 pt-12">
+    <p class="text-lg text-slate-700 leading-relaxed">
+      اروم مرکز با سال‌ها تجربه در حوزه تجارت بین‌المللی و آشنایی کامل با زیرساخت‌های گردشگری
+      تجاری آذربایجان غربی، خدمات تشریفات بازرگانی کاملی برای هیئت‌های تجاری، بازرگانان و
+      سرمایه‌گذاران ارائه می‌دهد. چه برای <a href="/export-apple-urmia-turkey-iraq" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات سیب ارومیه به ترکیه و عراق</a>
+      و چه برای <a href="/import-china-italy-urmia-customs" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات کالا از چین و ایتالیا</a>
+      به گمرک ارومیه، تیم ما تمام مراحل اقامت، حمل، جلسات و پذیرایی را مدیریت می‌کند.
+    </p>
+  </section>
+
+  <!-- Service Cards Grid -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1: Hotel -->
+      <a href="#hotel-booking" class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14h.01M12 14h.01M16 14h.01M8 18h.01M16 18h.01"/></svg>
+        </div>
+        <h2 class="font-bold text-slate-800 mb-2">رزرو هتل‌های لوکس و تجاری</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">رزرو سوئیت اجرایی و ریاستی در هتل‌های ۵ ستاره ارومیه و ترکیه با تخفیف ویژه.</p>
+      </a>
+
+      <!-- Card 2: Meeting Room -->
+      <a href="#meeting-rooms" class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9h.01M11 9h.01M15 9h.01M7 13h10"/></svg>
+        </div>
+        <h2 class="font-bold text-slate-800 mb-2">رزرو سالن همایش و جلسات</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">سالن همایش مجهز و اتاق جلسات B2B خصوصی با سیستم ترجمه همزمان.</p>
+      </a>
+
+      <!-- Card 3: VIP Van -->
+      <a href="#vip-van" class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 1 1-4 0M19 17a2 2 0 1 1-4 0M3 17V8l2-4h14l2 4v9"/><path d="M3 8h18M8 8V4M16 8V4"/></svg>
+        </div>
+        <h2 class="font-bold text-slate-800 mb-2">ون تشریفاتی و ماشین لوکس</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">ون VIP با راننده دوزبانه و ماشین لوکس برای ترانسفر هیئت‌های تجاری.</p>
+      </a>
+
+      <!-- Card 4: Restaurant -->
+      <a href="#restaurant" class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h18M3 11a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8M9 3v6M15 3v6"/></svg>
+        </div>
+        <h2 class="font-bold text-slate-800 mb-2">رستوران و غذای تشریفاتی</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">رزرو رستوران‌های منتخب ارومیه و منوهای تشریفاتی برای شام تجاری.</p>
+      </a>
+
+      <!-- Card 5: Transfer -->
+      <a href="#airport-transfer" class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5a2.12 2.12 0 0 0-3-3L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1L9 12l-2 3-2.5-.5L4 15l2 1 1 2 .5-2.5L10 14l3.8 5.3c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
+        </div>
+        <h2 class="font-bold text-slate-800 mb-2">ترانسفر فرودگاه و مرزها</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">پذیرش CIP فرودگاه و ترانسفر اختصاصی از مرز سرو و تمرچین به هتل.</p>
+      </a>
+
+      <!-- Card 6: B2B -->
+      <a href="#b2b-networking" class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h2 class="font-bold text-slate-800 mb-2">جلسات B2B با بازرگانان</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">هماهنگی و تنظیم جلسات تخصصی با تولیدکنندگان، خریداران و تجار ایرانی و خارجی.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Mid-section Image -->
+  <section class="max-w-5xl mx-auto px-4 py-6">
+    <img
+      src="https://images.unsplash.com/photo-1556761175-59cfb2e8d3d9?w=1200&h=500&fit=crop"
+      alt="جلسه تجاری و مذاکرات B2B در ارومیه"
+      class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+      loading="lazy"
+    />
+  </section>
+
+  <!-- Detailed Service Sections -->
+  <article class="max-w-4xl mx-auto px-4 py-8 space-y-16">
+
+    <!-- 1. Hotel Booking -->
+    <section id="hotel-booking" class="scroll-mt-20">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14h.01M12 14h.01M16 14h.01M8 18h.01M16 18h.01"/></svg>
+        </div>
+        <h2 class="text-xl md:text-2xl font-extrabold text-slate-800">رزرو هتل‌های لوکس و تجاری در ارومیه و ترکیه</h2>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        اروم مرکز با همکاری هتل‌های ۴ و ۵ ستاره ارومیه و ترکیه، رزرو سوئیت اجرایی، ریاستی و
+        اتاق‌های استاندارد را با تخفیف ویژه برای هیئت‌های تجاری انجام می‌دهد. هتل‌های منتخب
+        دارای امکاناتی مانند اینترنت پرسرعت، مرکز تجاری، سالن همایش، رستوران بین‌المللی و
+        استخر هستند. برای بازرگانانی که برای <a href="/export-urmia-iraq-74-percent" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات به عراق</a>
+        یا <a href="/export-agriculture-turkey-servo-border" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات به ترکیه از مرز سرو</a>
+        به ارومیه سفر می‌کنند، رزرو هتل نزدیک به گمرک و بازارهای تجاری اولویت دارد.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">هتل‌های منتخب ارومیه</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        هتل‌های ۵ ستاره ارومیه مانند هتل گسترا و هتل ارومیه‌مرکز با سوئیت‌های ریاستی، خدمات
+        ۲۴ ساعته و موقعیت مرکزی، برای هیئت‌های تجاری مناسب هستند. برای هیئت‌های بزرگ، رزرو
+        طبقه کامل با خدمات اختصاصی امکان‌پذیر است. همچنین برای بازرگانانی که در حوزه
+        <a href="/export-dairy-products-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات لبنیات</a>
+        یا <a href="/export-raisins-grapes-west-azerbaijan" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات کشمش</a>
+        فعالیت می‌کنند، هتل‌هایی نزدیک به کارخانجات فرآوری پیشنهاد می‌شود.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">رزرو هتل در ترکیه</h3>
+      <p class="text-slate-700 leading-relaxed">
+        برای هیئت‌هایی که پس از مذاکرات در ارومیه به ترکیه سفر می‌کنند، رزرو هتل در استانبول،
+        آنکارا و وان انجام می‌شود. هتل‌های منتخب ترکیه دارای امکانات تجاری کامل هستند و
+        نزدیک به مراکز خرید و بازارهای صادراتی قرار دارند. این سرویس برای بازرگانی که در
+        حوزه <a href="/export-servo-border-europe-gateway" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات به اروپا از طریق سرو</a>
+        فعالیت می‌کنند بسیار کاربردی است.
+      </p>
+    </section>
+
+    <!-- 2. Meeting Rooms -->
+    <section id="meeting-rooms" class="scroll-mt-20">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9h.01M11 9h.01M15 9h.01M7 13h10"/></svg>
+        </div>
+        <h2 class="text-xl md:text-2xl font-extrabold text-slate-800">رزرو سالن همایش و اتاق جلسات B2B</h2>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        اروم مرکز رزرو سالن همایش و اتاق جلسات خصوصی مجهز را برای مذاکرات تجاری، امضای
+        قرارداد و سمینارهای تخصصی ارائه می‌دهد. سالن‌ها دارای تجهیزات کامل شامل پروژکتور،
+        سیستم صوتی، اینترنت پرسرعت، سیستم ترجمه همزمان و تخته هوشمند هستند. برای جلسات
+        مرتبط با <a href="/customs-clearance-urmia-bazargan" class="text-emerald-600 hover:text-emerald-700 font-bold">ترخیص کالا از گمرک</a>
+        یا <a href="/export-import-consulting-chamber-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">مشاوره صادرات و واردات</a>،
+        اتاق جلسات نزدیک به اتاق بازرگانی ارومیه رزرو می‌شود.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">سالن همایش برای کنفرانس‌های تجاری</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        سالن همایش با ظرفیت ۱۰۰ تا ۳۰۰ نفر برای برگزاری کنفرانس‌های صادراتی و سمینارهای
+        تجاری مناسب است. این سالن‌ها برای معرفی محصولات مانند
+        <a href="/export-handmade-carpet-rug-azerbaijan" class="text-emerald-600 hover:text-emerald-700 font-bold">فرش دستباف آذربایجان</a>
+        یا <a href="/export-stone-building-materials-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">سنگ و مصالح ساختمانی</a>
+        به خریداران خارجی ایده‌آل است. خدمات پذیرایی، ترجمه همزمان و ثبت‌نام آنلاین در این
+        سالن‌ها ارائه می‌شود.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">اتاق جلسات خصوصی B2B</h3>
+      <p class="text-slate-700 leading-relaxed">
+        اتاق جلسات خصوصی با ظرفیت ۶ تا ۲۰ نفر برای مذاکرات محرمانه و امضای قرارداد ارائه
+        می‌شود. این اتاق‌ها دارای محیط آرام، خدمات پذیرایی و امنیت کامل هستند. برای جلسات
+        مرتبط با <a href="/order-registration-customs-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">ثبت سفارش و امور گمرکی</a>،
+        اتاق جلسات در مجتمع گمرک ارومیه رزرو می‌شود تا بازرگانان بدون اتلاف زمان مذاکرات
+        خود را انجام دهند.
+      </p>
+    </section>
+
+    <!-- 3. VIP Van -->
+    <section id="vip-van" class="scroll-mt-20">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 1 1-4 0M19 17a2 2 0 1 1-4 0M3 17V8l2-4h14l2 4v9"/><path d="M3 8h18M8 8V4M16 8V4"/></svg>
+        </div>
+        <h2 class="text-xl md:text-2xl font-extrabold text-slate-800">رزرو ون تشریفاتی و ماشین‌های لوکس</h2>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        اروم مرکز ون تشریفاتی VIP و ماشین‌های لوکس را با راننده دوزبانه (فارسی-ترکی و
+        فارسی-انگلیسی) برای ترانسفر هیئت‌های تجاری ارائه می‌دهد. ون‌ها دارای امکاناتی مانند
+        صندلی‌های چرمی، اینترنت رایگان، آب‌میوه و نوشیدنی، سیستم سرمایش و گرمایش مستقل و
+        فضای راحت برای ۷ نفر هستند. برای بازرگانی که برای بررسی
+        <a href="/export-walnut-apricot-urmia-neighbors" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات گردو و زردآلو</a>
+        یا <a href="/export-fruit-concentrate-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات کنسانتره میوه</a>
+        به باغات و کارخانجات ارومیه سفر می‌کنند، ون VIP بهترین انتخاب است.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">انواع خودروهای موجود</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        ناوگان اروم مرکز شامل ون‌های Mercedes Vito و V-Class برای هیئت‌های ۷ نفره،
+        ماشین‌های سدان لوکس برای ۳ نفر و مینی‌بوس برای هیئت‌های ۱۵ نفره است. تمام خودروها
+        بیمه شخص ثالث و بیمه مسافر دارند و به‌صورت روزانه یا ساعتی اجاره داده می‌شوند.
+        برای بازرگانانی که به
+        <a href="/international-transport-maku-free-zone" class="text-emerald-600 hover:text-emerald-700 font-bold">منطقه آزاد ماکو</a>
+        یا <a href="/trade-piranshahr-border-market" class="text-emerald-600 hover:text-emerald-700 font-bold">بازارچه پیرانشهر</a>
+        سفر می‌کنند، ترانسفر روزانه در دسترس است.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">راننده دوزبانه و راهنمای تجاری</h3>
+      <p class="text-slate-700 leading-relaxed">
+        تمام راننده‌های اروم مرکز دوزبانه هستند و آشنایی کامل با شهر ارومیه، مرزها و
+        مراکز تجاری دارند. علاوه بر راننده، راهنمای تجاری نیز برای همراهی هیئت‌ها در
+        مذاکرات و بازدید از کارخانجات قابل رزرو است. این سرویس برای بازرگانی که در حوزه
+        <a href="/export-russia-cis-azerbaijan" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات به روسیه و CIS</a>
+        فعالیت می‌کنند و نیاز به بازدید از باغات و سردخانه‌ها دارند، بسیار مفید است.
+      </p>
+    </section>
+
+    <!-- 4. Restaurant -->
+    <section id="restaurant" class="scroll-mt-20">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h18M3 11a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8M9 3v6M15 3v6"/></svg>
+        </div>
+        <h2 class="text-xl md:text-2xl font-extrabold text-slate-800">رزرو رستوران و سفارش غذای تشریفاتی</h2>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        اروم مرکز رزرو رستوران‌های منتخب ارومیه و سفارش منوهای تشریفاتی را برای شام‌های
+        تجاری و پذیرایی از هیئت‌های خارجی ارائه می‌دهد. رستوران‌های منتخب دارای سالن خصوصی،
+        منوهای بین‌المللی و محیط لوکس هستند. برای هیئت‌هایی که برای مذاکرات
+        <a href="/export-bitumen-petroleum-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات قیر نفتی</a>
+        یا <a href="/import-tractor-trailer-azerbaijan" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات تراکتور جاده‌ای</a>
+        به ارومیه سفر می‌کنند، شام تشریفاتی در رستوران‌های ۵ ستاره برگزار می‌شود.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">منوهای تشریفاتی و بین‌المللی</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        منوهای تشریفاتی شامل غذاهای سنتی آذربایجانی، کباب‌های خاص، غذاهای بین‌المللی و
+        منوهای گیاهی هستند. برای هیئت‌های عربی (مرتبط با
+        <a href="/export-azerbaijan-republic-border-markets" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات به جمهوری آذربایجان</a>)،
+        منوهای حلال و عربی تهیه می‌شود. برای هیئت‌های اروپایی، منوهای قاره‌ای ارائه
+        می‌شود. تمام مواد اولیه از محصولات محلی و ارگانیک ارومیه تهیه می‌شوند.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">پذیرایی در جلسات و کنفرانس‌ها</h3>
+      <p class="text-slate-700 leading-relaxed">
+        اروم مرکز خدمات پذیرایی کامل برای جلسات، کنفرانس‌ها و سمینارها را ارائه می‌دهد.
+        پذیرایی شامل چای و قهوه، شیرینی، میوه، ناهار تشریفاتی و نوشیدنی‌های سرد است. برای
+        جلسات مرتبط با <a href="/import-medical-electronic-equipment-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات تجهیزات پزشکی</a>
+        یا <a href="/import-mdf-fiberboard-china-turkey" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات ام‌دی‌اف</a>،
+        پذیرایی در اتاق جلسات مجتمع گمرک ارائه می‌شود.
+      </p>
+    </section>
+
+    <!-- 5. Airport & Border Transfer -->
+    <section id="airport-transfer" class="scroll-mt-20">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5a2.12 2.12 0 0 0-3-3L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1L9 12l-2 3-2.5-.5L4 15l2 1 1 2 .5-2.5L10 14l3.8 5.3c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
+        </div>
+        <h2 class="text-xl md:text-2xl font-extrabold text-slate-800">ترانسفر اختصاصی فرودگاه و مرزها</h2>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        اروم مرکز خدمات ترانسفر اختصاصی از فرودگاه ارومیه و مرزهای سرو و تمرچین به هتل و
+        بالعکس را ارائه می‌دهد. خدمات شامل پذیرش CIP فرودگاه، ترانسفر با ون VIP، حمل بار و
+        همراهی تا هتل است. برای بازرگانی که برای
+        <a href="/import-banana-azerbaijan-customs" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات موز</a>
+        یا <a href="/import-paper-cardboard-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات کاغذ</a>
+        به گمرک ارومیه سفر می‌کنند، ترانسفر از فرودگاه به گمرک و سپس به هتل ارائه می‌شود.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">پذیرش CIP فرودگاه ارومیه</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        خدمات CIP فرودگاه شامل پذیرش ویژه، عبور سریع از گیت، سالن استراحت اختصاصی و
+        ترانسفر با ون لوکس است. این سرویس برای هیئت‌های مهم تجاری که زمان محدودی دارند
+        و می‌خواهند سریع به جلسات <a href="/import-spare-parts-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات قطعات یدکی</a>
+        یا <a href="/import-textile-fabric-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات پارچه</a>
+        بروند، ایده‌آل است. پذیرش CIP در فرودگاه‌های تهران، تبریز و ارومیه انجام می‌شود.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">ترانسفر از مرز سرو و تمرچین</h3>
+      <p class="text-slate-700 leading-relaxed">
+        برای هیئت‌هایی که از ترکیه از طریق <a href="/export-servo-border-europe-gateway" class="text-emerald-600 hover:text-emerald-700 font-bold">مرز سرو</a>
+        یا از عراق از طریق مرز تمرچین وارد ایران می‌شوند، ترانسفر با ون VIP به ارومیه ارائه
+        می‌شود. مسیر سرو-ارومیه ۱.۵ ساعت و مسیر تمرچین-ارومیه ۲ ساعت است. برای بازرگانی که
+        در حوزه <a href="/export-apple-urmia-turkey-iraq" class="text-emerald-600 hover:text-emerald-700 font-bold">صادرات سیب به ترکیه و عراق</a>
+        فعالیت می‌کنند، ترانسفر روزانه از مرز به بازارهای ارومیه در دسترس است.
+      </p>
+    </section>
+
+    <!-- 6. B2B Networking -->
+    <section id="b2b-networking" class="scroll-mt-20">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h2 class="text-xl md:text-2xl font-extrabold text-slate-800">هماهنگی و تنظیم جلسات با تجار و بازرگانان</h2>
+      </div>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        اروم مرکز با شبکه گسترده ارتباطات در اتاق بازرگانی ارومیه و انجمن‌های صنفی، جلسات
+        تخصصی B2B را بین تولیدکنندگان ایرانی و خریداران خارجی هماهنگ می‌کند. این خدمات
+        شامل شناسایی طرف مقابل، تنظیم دستور جلسه، ترجمه و راهنمای تجاری است. برای خریدارانی
+        که به دنبال <a href="/export-apple-urmia-turkey-iraq" class="text-emerald-600 hover:text-emerald-700 font-bold">سیب صادراتی ارومیه</a>
+        یا <a href="/export-raisins-grapes-west-azerbaijan" class="text-emerald-600 hover:text-emerald-700 font-bold">کشمش طلایی</a>
+        هستند، اروم مرکز جلسات مستقیم با باغداران و کارخانجات فرآوری تنظیم می‌کند.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">جلسات با تولیدکنندگان کشاورزی</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        اروم مرکز جلسات B2B را با تولیدکنندگان محصولات کشاورزی ارومیه تنظیم می‌کند. برای
+        خریداران <a href="/export-walnut-apricot-urmia-neighbors" class="text-emerald-600 hover:text-emerald-700 font-bold">گردو و زردآلو</a>،
+        <a href="/export-dairy-products-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">محصولات لبنی</a>
+        و <a href="/export-fruit-concentrate-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">کنسانتره میوه</a>،
+        جلسات در کارخانجات و باغات برگزار می‌شود تا خریدار کیفیت محصول را از نزدیک بررسی
+        کند. اروم مرکز برنامه بازدید، ترانسفر و ترجمه را مدیریت می‌کند.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">جلسات با واردکنندگان و تأمین‌کنندگان صنعتی</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        برای بازرگانی که در حوزه <a href="/import-mdf-fiberboard-china-turkey" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات ام‌دی‌اف از چین</a>
+        یا <a href="/import-medical-electronic-equipment-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات تجهیزات پزشکی</a>
+        فعالیت می‌کنند، اروم مرکز جلسات با تأمین‌کنندگان معتبر چینی و اروپایی تنظیم می‌کند.
+        همچنین برای <a href="/import-tractor-trailer-azerbaijan" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات تراکتور جاده‌ای</a>
+        و <a href="/import-china-italy-urmia-customs" class="text-emerald-600 hover:text-emerald-700 font-bold">واردات از چین و ایتالیا</a>،
+        ارتباط با نمایندگان رسمی برندها برقرار می‌شود.
+      </p>
+      <h3 class="font-bold text-slate-800 mt-6 mb-3">جلسات با شرکت‌های حمل و نقل و گمرک</h3>
+      <p class="text-slate-700 leading-relaxed">
+        اروم مرکز جلسات با شرکت‌های حمل و نقل بین‌المللی و ترخیص‌کاران گمرکی را هماهنگ
+        می‌کند. برای بازرگانی که در حوزه
+        <a href="/customs-clearance-urmia-bazargan" class="text-emerald-600 hover:text-emerald-700 font-bold">ترخیص کالا از گمرک</a>
+        یا <a href="/international-transport-maku-free-zone" class="text-emerald-600 hover:text-emerald-700 font-bold">حمل و نقل بین‌المللی از ماکو</a>
+        نیاز به مشاوره دارند، جلسات تخصصی با کارشناسان گمرکی و شرکت‌های حمل برگزار می‌شود.
+        همچنین برای <a href="/order-registration-customs-urmia" class="text-emerald-600 hover:text-emerald-700 font-bold">ثبت سفارش</a>،
+        جلسات با کارشناسان سامانه NTSW تنظیم می‌گردد.
+      </p>
+    </section>
+  </article>
+
+  <!-- FAQ Section -->
+  <section class="max-w-3xl mx-auto px-4 py-12">
+    <h2 class="text-xl md:text-2xl font-extrabold text-slate-800 mb-6 text-center">سوالات متداول خدمات تشریفات</h2>
+    <div class="space-y-3">
+      <details class="group bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+        <summary class="font-bold text-slate-800 cursor-pointer list-none flex items-center justify-between">
+          خدمات تشریفات بازرگانی اروم مرکز شامل چه مواردی است؟
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p class="text-sm text-slate-600 leading-relaxed mt-3">خدمات شامل رزرو هتل لوکس، سالن همایش، ون VIP، رستوران تشریفاتی، ترانسفر فرودگاه و مرز، و هماهنگی جلسات B2B با تجار و بازرگانان است.</p>
+      </details>
+      <details class="group bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+        <summary class="font-bold text-slate-800 cursor-pointer list-none flex items-center justify-between">
+          آیا رزرو هتل در ترکیه نیز انجام می‌شود؟
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p class="text-sm text-slate-600 leading-relaxed mt-3">بله، اروم مرکز رزرو هتل در شهرهای استانبول، آنکارا و وان ترکیه را برای هیئت‌های تجاری انجام می‌دهد.</p>
+      </details>
+      <details class="group bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+        <summary class="font-bold text-slate-800 cursor-pointer list-none flex items-center justify-between">
+          ون VIP با چه امکاناتی ارائه می‌شود؟
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p class="text-sm text-slate-600 leading-relaxed mt-3">ون‌های لوکس با راننده دوزبانه، اینترنت رایگان، آب‌میوه و نوشیدنی، و فضای راحت برای ۷ نفر ارائه می‌شوند.</p>
+      </details>
+      <details class="group bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+        <summary class="font-bold text-slate-800 cursor-pointer list-none flex items-center justify-between">
+          چگونه می‌توانم جلسه B2B با تجار ارومیه رزرو کنم؟
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p class="text-sm text-slate-600 leading-relaxed mt-3">با تماس به ۰۹۱۴۳۴۰۳۴۳۱ یا واتساپ، اروم مرکز جلسات با تولیدکنندگان و خریداران را هماهنگ می‌کند.</p>
+      </details>
+      <details class="group bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+        <summary class="font-bold text-slate-800 cursor-pointer list-none flex items-center justify-between">
+          ترانسفر فرودگاه شامل چه خدماتی است؟
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p class="text-sm text-slate-600 leading-relaxed mt-3">پذیرش CIP فرودگاه، ترانسفر با ون لوکس به هتل، و حمل از مرز سرو و تمرچین به ارومیه شامل می‌شود.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-4 pb-16">
+    <div class="bg-slate-800 rounded-2xl p-8 text-center">
+      <h2 class="text-xl font-bold text-white mb-2">رزرو خدمات تشریفات بازرگانی</h2>
+      <p class="text-slate-300 text-sm mb-6">برای رزرو هتل، ون VIP، سالن جلسات و هماهنگی جلسات B2B با اروم مرکز تماس بگیرید.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="tel:09143403431" class="bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 rounded-xl font-bold transition-colors">تماس: ۰۹۱۴۳۴۰۳۴۳۱</a>
+        <a href="https://wa.me/989143403431" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-xl font-bold transition-colors">واتساپ</a>
+        <a href="/contact" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-xl font-bold transition-colors">صفحه تماس</a>
+      </div>
+    </div>
+  </section>
+</Layout>

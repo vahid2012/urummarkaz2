@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const turkeyTours = [
+  {
+    title: 'تور نمایشگاه کیف و کفش استانبول',
+    desc: 'شرکت در نمایشگاه کیف و کفش استانبول برای واردکنندگان و تولیدکنندگان صنایع چرم و پوشاک.',
+    icon: 'shopping',
+  },
+  {
+    title: 'تور نمایشگاه اتومکانیکا استانبول',
+    desc: 'حضور در نمایشگاه اتومکانیکا برای تجار قطعات خودرو، ماشین‌آلات و صنایع پشتیبان خودرو.',
+    icon: 'car',
+  },
+  {
+    title: 'اعزام هیئت خرید به ترکیه',
+    desc: 'سازماندهی هیئت خرید برای بازرگانان واردکننده کالا از کارخانجات و بازارهای ترکیه.',
+    icon: 'group',
+  },
+  {
+    title: 'تور تجاری بازدید از کارخانه‌های ترکیه',
+    desc: 'بازدید مستقیم از کارخانه‌های تولیدی ترکیه برای انتخاب تأمین‌کننده و بررسی کیفیت محصول.',
+    icon: 'factory',
+  },
+  {
+    title: 'تور نمایشگاه MÜSİAD EXPO استانبول',
+    desc: 'شرکت در نمایشگاه MÜSİAD EXPO برای شبکه‌سازی با سرمایه‌گذاران و شرکت‌های صنعتی ترکیه.',
+    icon: 'briefcase',
+  },
+  {
+    title: 'تور نمایشگاه جیتکس استانبول (GITEX)',
+    desc: 'حضور در نمایشگاه فناوری GITEX استانبول برای فعالان حوزه IT و تجهیزات دیجیتال.',
+    icon: 'code',
+  },
+  {
+    title: 'تور نمایشگاه مواد غذایی و آشامیدنی استانبول',
+    desc: 'بازدید از نمایشگاه صنایع غذایی استانبول برای واردکنندگان و توزیع‌کنندگان مواد غذایی.',
+    icon: 'food',
+  },
+  {
+    title: 'جلسات B2B در سفر تجاری به استانبول',
+    desc: 'ترتیب‌دهی جلسات تجاری دوسویه (B2B) با شرکت‌های ترکیه‌ای در حاشیه سفر تجاری به استانبول.',
+    icon: 'handshake',
+  },
+  {
+    title: 'تور نمایشگاهی صنعت ساختمان یاپی ترکیه',
+    desc: 'حضور در نمایشگاه یاپی (YAPI) برای واردکنندگان مصالح ساختمانی و شرکت‌های پیمانکاری.',
+    icon: 'building',
+  },
+  {
+    title: 'سفر کاری به استانبول برای واردات کالا',
+    desc: 'سفر کاری همه‌جانبه به استانبول برای sourcing، مذاکره و ثبت سفارش کالای وارداتی.',
+    icon: 'plane',
+  },
+];
+
+const russiaTours = [
+  {
+    title: 'تور تجاری نمایشگاه نفت و گاز مسکو',
+    desc: 'حضور در نمایشگاه نفت‌وگاز مسکو برای شرکت‌های انرژی و پیمانکاران.',
+    icon: 'oil',
+  },
+  {
+    title: 'تور تجاری نمایشگاه صنایع غذایی مسکو (WorldFood / Prodexpo)',
+    desc: 'بازدید از WorldFood مسکو برای واردکنندگان مواد غذایی و کشاورزی.',
+    icon: 'food',
+  },
+  {
+    title: 'تور تجاری نمایشگاه قطعات خودرو سن‌پترزبورگ (MIMS Automobility)',
+    desc: 'حضور در MIMS سن‌پترزبورگ برای تجار قطعات خودرو و ماشین‌آلات.',
+    icon: 'car',
+  },
+  {
+    title: 'تور تجاری هفته ساخت‌وساز مسکو (MosBuild)',
+    desc: 'شرکت در MosBuild مسکو برای واردکنندگان مصالح و ابزار ساختمانی.',
+    icon: 'building',
+  },
+  {
+    title: 'تور تجاری هفته دیجیتال کازان (Kazan Digital Week)',
+    desc: 'حضور در Kazan Digital Week برای فعالان IT و فناوری.',
+    icon: 'code',
+  },
+  {
+    title: 'تور تجاری نمایشگاه متالورژی و صنایع فلزی مسکو (Metalloobrabotka)',
+    desc: 'بازدید از Metalloobrabotka مسکو برای صنایع فلزی و ماشین‌کاری.',
+    icon: 'metal',
+  },
+  {
+    title: 'تور تجاری نمایشگاه مبلمان و دکوراسیون مسکو (Show Mebel)',
+    desc: 'حضور در Show Mebel مسکو برای واردکنندگان مبلمان و دکوراسیون.',
+    icon: 'furniture',
+  },
+  {
+    title: 'اعزام هیئت تجاری به مسکو با تمرکز بر حل چالش‌های مالی',
+    desc: 'هیئت تجاری به مسکو با راه‌حل‌های بانکی و ارزی برای تجار.',
+    icon: 'finance',
+  },
+  {
+    title: 'تور تجاری نمایشگاه صنایع غذایی و کشاورزی روستوف',
+    desc: 'بازدید از نمایشگاه روستوف برای صادرکنندگان محصولات کشاورزی و غذایی.',
+    icon: 'wheat',
+  },
+  {
+    title: 'تور تجاری نمایشگاه تجهیزات پزشکی و سلامت روسیه',
+    desc: 'حضور در نمایشگاه تجهیزات پزشکی روسیه برای واردکنندگان تجهیزات سلامت.',
+    icon: 'medical',
+  },
+];
+
+const getIcon = (name: string) => {
+  const icons: Record<string, string> = {
+    shopping: '<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>',
+    car: '<path d="M5 17h14M5 17a2 2 0 1 1-4 0M19 17a2 2 0 1 1-4 0M3 17V8l2-4h14l2 4v9"/><path d="M3 8h18M8 8V4M16 8V4"/>',
+    group: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+    factory: '<path d="M2 20h20M4 20V8l5 4V8l5 4V8l5 4v8M4 12h16"/>',
+    briefcase: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+    code: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+    food: '<path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/>',
+    handshake: '<path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h18"/>',
+    building: '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/>',
+    plane: '<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3-4-1-1.5 1.5L6 18l2.5 4.5L10 21l-1-4 3-2 3.2 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>',
+    oil: '<path d="M10 2h4M9 2v6l-4 8a4 4 0 0 0 4 6h6a4 4 0 0 0 4-6l-4-8V2M7 16h10"/>',
+    metal: '<path d="M12 2v4M5 8h14M7 8l-3 8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4l-3-8M9 14l2 2M15 14l-2 2"/>',
+    furniture: '<path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2M3 9h18v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM5 15v5M19 15v5M9 9v3M15 9v3"/>',
+    finance: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+    wheat: '<path d="M2 22 16 8M4 12a4 4 0 0 1-4-4V4a4 4 0 0 1 4 4zM12 4a4 4 0 0 0 0-4M12 12a4 4 0 0 0 0-4M20 12a4 4 0 0 1 0-4M14 20a4 4 0 0 1 0-4"/>',
+    medical: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/><path d="M12 8v6M9 11h6"/>',
+  };
+  return icons[name] || icons.briefcase;
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Business Tours',
+  name: 'برگزاری تورهای تجاری',
+  description: 'تورهای تجاری به ترکیه، عراق و کشورهای همسایه برای بازرگانان',
+  provider: { '@type': 'Organization', name: 'اروم مرکز', telephone: '09143403431' },
+  url: 'https://urummarkaz.ir/business-tours',
+};
+
+const turkeyItemListLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'تخصصی‌ترین تورهای تجاری ترکیه',
+  itemListElement: turkeyTours.map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.title,
+  })),
+};
+
+const russiaItemListLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'تورهای تجاری تخصصی روسیه',
+  itemListElement: russiaTours.map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.title,
+  })),
+};
+---
+
+<Layout
+  title="برگزاری تورهای تجاری | اروم مرکز"
+  description="تورهای تجاری به ترکیه، عراق و کشورهای همسایه برای بازرگانان. بازدید از بازارها، کارخانجات و نمایشگاه‌های بین‌المللی."
+  keywords="تور تجاری, تور تجاری ترکیه, تور تجاری روسیه, تور تجاری عراق, تور نمایشگاه استانبول, تور اتومکانیکا, تور GITEX, هیئت خرید ترکیه, سفر کاری استانبول, تور نفت و گاز مسکو, تور WorldFood مسکو, تور MosBuild, هیئت تجاری مسکو, واردات از ترکیه, واردات از روسیه, اروم مرکز"
+  image="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop"
+  jsonLd={[jsonLd, turkeyItemListLd, russiaItemListLd]}
+>
+  <section class="relative h-72 md:h-80 flex items-end overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop" alt="برگزاری تورهای تجاری به ترکیه و عراق" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent"></div>
+    <div class="relative max-w-5xl mx-auto px-4 pb-8 w-full">
+      <h1 class="text-2xl md:text-4xl font-extrabold text-white">برگزاری تورهای تجاری</h1>
+      <p class="text-slate-300 mt-2">تورهای تجاری به ترکیه، عراق و کشورهای همسایه</p>
+    </div>
+  </section>
+
+  <article class="max-w-3xl mx-auto px-4 py-12 space-y-8">
+    <p class="text-lg text-slate-700 leading-relaxed">اروم مرکز با تجربه در برگزاری تورهای تجاری، بازرگانان را به بازارهای هدف هدایت می‌کند. این تورها شامل بازدید از کارخانجات، بازارهای محلی و نمایشگاه‌های بین‌المللی است.</p>
+
+    <section>
+      <h2 class="text-xl font-bold text-slate-800 mb-3 border-r-4 border-emerald-500 pr-4">مقاصد تورهای تجاری</h2>
+      <ul class="space-y-3 text-slate-600">
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> ترکیه — بازارهای استانبانول و آنکارا</li>
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> عراق — بغداد، اربیل و بصره</li>
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> جمهوری آذربایجان — باکو</li>
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> روسیه و کشورهای CIS</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-slate-800 mb-3 border-r-4 border-emerald-500 pr-4">خدمات تور</h2>
+      <p class="text-slate-600 leading-relaxed">هر تور شامل ویزا، حمل و نقل، اقامت، مترجم تجاری و برنامه‌ریزی جلسات B2B با تولیدکنندگان و خریداران محلی است.</p>
+    </section>
+
+    <!-- Specialized Turkey Business Tours -->
+    <section class="max-w-5xl mx-auto px-4 py-12">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 mb-3 border-r-4 border-emerald-500 pr-4">تخصصی‌ترین تورهای تجاری ترکیه</h2>
+      <p class="text-slate-600 mb-8 leading-relaxed">ده تور تخصصی و نمایشگاهی به استانبول و سایر شهرهای ترکیه، متناسب با نیازهای بازرگانان، واردکنندگان و تولیدکنندگان ایرانی.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" dir="rtl">
+        {turkeyTours.map((tour) => (
+          <div class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300 shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={getIcon(tour.icon)} />
+            </div>
+            <h3 class="font-bold text-slate-800 mb-2 leading-snug text-base">{tour.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{tour.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Specialized Russia Business Tours -->
+    <section class="max-w-5xl mx-auto px-4 py-12">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 mb-3 border-r-4 border-rose-500 pr-4">تورهای تجاری تخصصی روسیه</h2>
+      <p class="text-slate-600 mb-8 leading-relaxed">ده تور تخصصی و نمایشگاهی به مسکو، سن‌پترزبورگ، کازان و روستوف، متناسب با نیازهای صادرکنندگان و واردکنندگان ایرانی.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" dir="rtl">
+        {russiaTours.map((tour) => (
+          <div class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-rose-200 transition-all duration-300 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300 shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={getIcon(tour.icon)} />
+            </div>
+            <h3 class="font-bold text-slate-800 mb-2 leading-snug text-base">{tour.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{tour.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-slate-800 rounded-2xl p-8 text-center">
+      <h2 class="text-xl font-bold text-white mb-2">رزرو تور تجاری</h2>
+      <div class="flex flex-wrap gap-3 justify-center mt-4">
+        <a href="tel:09143403431" class="bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 rounded-xl font-bold transition-colors">تماس: ۰۹۱۴۳۴۰۳۴۳۱</a>
+        <a href="https://wa.me/989143403431" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-xl font-bold transition-colors">واتساپ</a>
+      </div>
+    </section>
+  </article>
+</Layout>

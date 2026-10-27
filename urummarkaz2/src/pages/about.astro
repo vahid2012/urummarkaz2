@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'درباره اروم مرکز',
+  description: 'معرفی آقای وحید قلی‌پور و اروم مرکز، فعالیت‌ها و اهداف تجاری در اتاق بازرگانی ارومیه',
+  url: 'https://urummarkaz.ir/about',
+};
+---
+
+<Layout
+  title="درباره اروم مرکز | معرفی وحید قلی‌پور"
+  description="معرفی آقای وحید قلی‌پور، بنیان‌گذار اروم مرکز و عضو اتاق بازرگانی ارومیه. اهداف تجاری، خدمات و تجربه در حوزه صادرات، واردات و خدمات گمرکی."
+  keywords="اروم مرکز, وحید قلی‌پور, اتاق بازرگانی ارومیه, صادرات آذربایجان غربی, خدمات گمرکی"
+  jsonLd={jsonLd}
+>
+  <section class="bg-gradient-to-br from-slate-800 to-slate-900 text-white py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">درباره اروم مرکز</h1>
+      <p class="text-slate-300 leading-relaxed">معرفی بنیان‌گذار، فعالیت‌ها و اهداف تجاری</p>
+    </div>
+  </section>
+
+  <article class="max-w-3xl mx-auto px-4 py-12 space-y-8">
+    <section>
+      <h2 class="text-xl font-bold text-slate-800 mb-3 border-r-4 border-emerald-500 pr-4">معرفی وحید قلی‌پور</h2>
+      <p class="text-slate-600 leading-relaxed">آقای وحید قلی‌پور، بنیان‌گذار و مدیر اروم مرکز، با سال‌ها تجربه در حوزه صادرات، واردات و خدمات گمرکی استان آذربایجان غربی، به یکی از مراجع معتبر تجاری منطقه تبدیل شده است. ایشان عضو فعال اتاق بازرگانی، صنایع، معادن و کشاورزی ارومیه است و در توسعه صادرات استان نقش کلیدی ایفا می‌کند. با تمرکز بر ارتباط مستقیم با تولیدکنندگان و خریداران خارجی، اروم مرکز زیر چشم ایشان به پلی مطمئن میان بازار داخلی و بین‌المللی تبدیل شده است.</p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-slate-800 mb-3 border-r-4 border-emerald-500 pr-4">اتاق بازرگانی ارومیه</h2>
+      <p class="text-slate-600 leading-relaxed">اتاق بازرگانی ارومیه نهاد رسمی نمایندگی بخش خصوصی استان آذربایجان غربی است که به بازرگانان خدمات مشاوره، صدور گواهی مبدا، ثبت سفارش و اطلاعات بازار ارائه می‌دهد. اروم مرکز با همکاری مستمر با اتاق بازرگانی، فرآیندهای تجاری را برای صادرکنندگان و واردکنندگان تسهیل می‌کند و دسترسی به بازارهای عراق، ترکیه، روسیه و کشورهای CIS را تسریع می‌بخشد.</p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-slate-800 mb-3 border-r-4 border-emerald-500 pr-4">اهداف تجاری اروم مرکز</h2>
+      <ul class="space-y-3 text-slate-600">
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> توسعه صادرات محصولات کشاورزی و صنعتی آذربایجان غربی</li>
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> تسهیل واردات قانونی با مشاوره گمرکی و ثبت سفارش</li>
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> برگزاری تورهای تجاری و ارتباطات B2B با خریداران خارجی</li>
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> ارائه خدمات تشریفات بازرگانی برای هیئت‌های تجاری بین‌المللی</li>
+        <li class="flex items-start gap-2"><span class="text-emerald-500 mt-1">✓</span> پشتیبانی از تولیدکنندگان محلی برای ورود به بازارهای جهانی</li>
+      </ul>
+    </section>
+
+    <section class="bg-slate-800 rounded-2xl p-8 text-center">
+      <h2 class="text-xl font-bold text-white mb-2">تماس با اروم مرکز</h2>
+      <div class="flex flex-wrap gap-3 justify-center mt-4">
+        <a href="tel:09143403431" class="bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 rounded-xl font-bold transition-colors">تماس: ۰۹۱۴۳۴۰۳۴۳۱</a>
+        <a href="https://wa.me/989143403431" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-xl font-bold transition-colors">واتساپ</a>
+        <a href="https://instagram.com/vahid.gholipour2026" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-xl font-bold transition-colors">اینستاگرام</a>
+      </div>
+      <p class="text-slate-400 text-sm mt-4">تلفن ثابت: ۰۴۴۳۳۴۶۵۵۲۴</p>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,110 @@
+---
+import { pages } from '../data/pages';
+
+const exportPages = pages.filter((p) => p.category === 'export');
+const importPages = pages.filter((p) => p.category === 'import');
+const logisticsPages = pages.filter((p) => p.category === 'logistics');
+const consultingPages = pages.filter((p) => p.category === 'consulting');
+
+const menu = [
+  { label: 'خانه', href: '/' },
+  {
+    label: 'درباره ما',
+    children: [
+      { label: 'درباره اروم مرکز', href: '/about' },
+      { label: 'همکاری با ما', href: '/cooperation' },
+      { label: 'سوالات متداول', href: '/faq' },
+    ],
+  },
+  {
+    label: 'خدمات',
+    children: [
+      { label: 'تورهای تجاری', href: '/business-tours' },
+      { label: 'خدمات تشریفات بازرگانی', href: '/business-services' },
+      { label: 'منابع و فایل‌های آماده', href: '/resources' },
+      { label: 'مشاوره صادرات و واردات', href: '/export-import-consulting-chamber-urmia' },
+      { label: 'ترخیص کالا از گمرک', href: '/customs-clearance-urmia-bazargan' },
+    ],
+  },
+  {
+    label: 'صادرات',
+    children: exportPages.map((p) => ({ label: p.title, href: `/${p.slug}` })),
+  },
+  {
+    label: 'واردات',
+    children: importPages.map((p) => ({ label: p.title, href: `/${p.slug}` })),
+  },
+  {
+    label: 'حمل و نقل و مشاوره',
+    children: [...logisticsPages, ...consultingPages].map((p) => ({ label: p.title, href: `/${p.slug}` })),
+  },
+  { label: 'تماس', href: '/contact' },
+];
+---
+
+<header class="sticky top-0 z-40 bg-slate-800 text-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2 shrink-0">
+        <span class="text-lg font-extrabold text-emerald-400">اروم مرکز</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1 text-sm">
+        {menu.map((item) => (
+          item.href ? (
+            <a href={item.href} class="px-3 py-2 hover:text-emerald-400 transition-colors whitespace-nowrap">{item.label}</a>
+          ) : (
+            <div class="relative group">
+              <button class="px-3 py-2 hover:text-emerald-400 transition-colors flex items-center gap-1 whitespace-nowrap">
+                {item.label}
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="absolute right-0 top-full pt-2 w-72 max-h-[70vh] overflow-y-auto bg-white text-slate-700 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2 z-50">
+                {item.children?.map((child) => (
+                  <a href={child.href} class="block text-xs px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-700 transition-colors leading-snug">{child.label}</a>
+                ))}
+              </div>
+            </div>
+          )
+        ))}
+      </nav>
+
+      <a href="tel:09143403431" class="hidden lg:inline-block bg-emerald-500 hover:bg-emerald-400 px-4 py-2 rounded-lg text-sm font-bold transition-colors shrink-0">
+        تماس: ۰۹۱۴۳۴۰۳۴۳۱
+      </a>
+
+      <button id="mobile-menu-btn" class="lg:hidden p-2" aria-label="منو">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-slate-700 border-t border-slate-600 max-h-[80vh] overflow-y-auto">
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      {menu.map((item) => (
+        item.href ? (
+          <a href={item.href} class="block text-sm py-2.5 px-3 rounded-lg hover:bg-slate-600 transition-colors">{item.label}</a>
+        ) : (
+          <details class="group">
+            <summary class="text-sm py-2.5 px-3 cursor-pointer list-none flex items-center justify-between rounded-lg hover:bg-slate-600 transition-colors">
+              {item.label}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-open:rotate-180 transition-transform shrink-0"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <div class="pr-3 mt-1 space-y-0.5">
+              {item.children?.map((child) => (
+                <a href={child.href} class="block text-xs py-2 px-3 text-slate-300 hover:text-emerald-400 transition-colors leading-snug">{child.label}</a>
+              ))}
+            </div>
+          </details>
+        )
+      ))}
+      <a href="tel:09143403431" class="block bg-emerald-500 text-white text-center py-2.5 rounded-lg text-sm font-bold mt-3">تماس: ۰۹۱۴۳۴۰۳۴۳۱</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

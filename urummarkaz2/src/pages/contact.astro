@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'تماس با اروم مرکز',
+  description: 'راه‌های ارتباطی با اروم مرکز',
+  url: 'https://urummarkaz.ir/contact',
+};
+---
+
+<Layout
+  title="تماس با ما | اروم مرکز"
+  description="راه‌های ارتباطی با اروم مرکز: تلفن، واتساپ و اینستاگرام. مشاوره صادرات، واردات و خدمات گمرکی."
+  keywords="تماس اروم مرکز, تلفن, واتساپ, اینستاگرام, صادرات ارومیه"
+  jsonLd={jsonLd}
+>
+  <section class="bg-gradient-to-br from-slate-800 to-slate-900 text-white py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-4">تماس با ما</h1>
+      <p class="text-slate-300">برای مشاوره صادرات، واردات و خدمات گمرکی با ما در ارتباط باشید</p>
+    </div>
+  </section>
+
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <a href="tel:09143403431" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">📞</div>
+        <h2 class="font-bold text-slate-800 mb-1">تلفن همراه</h2>
+        <p class="text-sm text-slate-600" dir="ltr">09143403431</p>
+      </a>
+      <a href="https://wa.me/989143403431" target="_blank" rel="noopener noreferrer" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">💬</div>
+        <h2 class="font-bold text-slate-800 mb-1">واتساپ</h2>
+        <p class="text-sm text-slate-600" dir="ltr">09143403431</p>
+      </a>
+      <a href="https://instagram.com/vahid.gholipour2026" target="_blank" rel="noopener noreferrer" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-2">📷</div>
+        <h2 class="font-bold text-slate-800 mb-1">اینستاگرام</h2>
+        <p class="text-sm text-slate-600" dir="ltr">vahid.gholipour2026</p>
+      </a>
+    </div>
+
+    <div class="bg-slate-100 rounded-2xl p-6 text-center">
+      <h2 class="font-bold text-slate-800 mb-2">تلفن ثابت</h2>
+      <p class="text-lg text-slate-700" dir="ltr">04433465524</p>
+    </div>
+  </article>
+</Layout>
